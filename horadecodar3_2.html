@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bomba Relógio</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: lime;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .bomba {
+            text-align: center;
+        }
+
+        #contagem {
+            font-size: 5em;
+        }
+
+        #mensagem {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bomba">
+        <div id="contagem">30</div>
+        <div id="mensagem"></div>
+    </div>
+    <script>
+        let tempo = 30;
+
+        const contagemElement = document.getElementById('contagem');
+        const mensagemElement = document.getElementById('mensagem');
+
+        const intervalo = setInterval(() => {
+            contagemElement.textContent = tempo;
+            tempo--;
+
+            if (tempo < 0) {
+                clearInterval(intervalo);
+                mensagemElement.textContent = 'EXPLOSÃO';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuadas de 1 a N</title>
+</head>
+<body>
+    <h1>Tabuadas de 1 a N</h1>
+    <script>
+        const N = parseInt(prompt("Digite um valor N:"));
+
+        if (N > 0) {
+            let resultado = '';
+            for (let i = 1; i <= N; i++) {
+                resultado += `<h3>Tabuada do ${i}:</h3>`;
+                for (let j = 1; j <= 10; j++) {
+                    resultado += `${i} x ${j} = ${i * j}<br>`;
+                }
+            }
+            document.body.innerHTML += resultado;
+        } else {
+            alert("Por favor, insira um número maior que 0.");
+        }
+    </script>
+</body>
+</html>

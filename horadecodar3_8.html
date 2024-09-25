@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Números Inteiros</title>
+</head>
+<body>
+    <h1>Imprimir Números de 1 a N</h1>
+    <script>
+        function imprimirNumeros() {
+            const N = parseInt(prompt("Digite um valor N (maior que 0):"));
+
+            if (N > 0) {
+                let resultado = '';
+                for (let i = 1; i <= N; i++) {
+                    resultado += i + (i < N ? ', ' : ''); // Adiciona vírgula entre os números
+                }
+                alert(`Os números de 1 a ${N} são: ${resultado}`);
+            } else {
+                alert("Por favor, insira um número maior que 0.");
+            }
+        }
+
+        imprimirNumeros();
+    </script>
+</body>
+</html>
